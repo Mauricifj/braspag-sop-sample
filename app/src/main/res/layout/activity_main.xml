@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/result_content"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/payment_token_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/payment_token_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Payment Token:" />
+
+            <TextView
+                android:id="@+id/payment_token_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/payment_token_label"
+                android:text="111111111-2222-3333-4444-5555555555555" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/card_token_content"
+            android:layout_below="@+id/payment_token_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/card_token_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Card Token:" />
+
+            <TextView
+                android:id="@+id/card_token_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/card_token_label"
+                android:text="111111111-2222-3333-4444-5555555555555" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/bin_query_content"
+            android:layout_below="@+id/card_token_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/brand_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Brand:" />
+
+            <TextView
+                android:id="@+id/brand_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/brand_label"
+                android:text="VISA" />
+
+            <TextView
+                android:id="@+id/foreign_card_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_below="@+id/brand_label"
+                android:text="Foreign Card:" />
+
+            <TextView
+                android:id="@+id/foreign_card_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/brand_label"
+                android:layout_toEndOf="@+id/foreign_card_label"
+                android:text="true" />
+
+            <TextView
+                android:id="@+id/bin_query_return_code_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_below="@+id/foreign_card_label"
+                android:text="BinQuery Return Code:" />
+
+            <TextView
+                android:id="@+id/bin_query_return_code_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/foreign_card_label"
+                android:layout_toEndOf="@+id/bin_query_return_code_label"
+                android:text="00" />
+
+            <TextView
+                android:id="@+id/bin_query_return_message_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_below="@+id/bin_query_return_code_label"
+                android:text="BinQuery Return Code:" />
+
+            <TextView
+                android:id="@+id/bin_query_return_message_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bin_query_return_code_label"
+                android:layout_toEndOf="@+id/bin_query_return_message_label"
+                android:text="Análise Autorizada" />
+
+            <TextView
+                android:id="@+id/card_bin_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_below="@+id/bin_query_return_message_label"
+                android:text="Card Bin:" />
+
+            <TextView
+                android:id="@+id/card_bin_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bin_query_return_message_label"
+                android:layout_toEndOf="@+id/card_bin_label"
+                android:text="123412" />
+
+            <TextView
+                android:id="@+id/card_last_four_digits_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_below="@+id/card_bin_label"
+                android:text="Card Last 4 Digits:" />
+
+            <TextView
+                android:id="@+id/card_last_four_digits_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/card_bin_label"
+                android:layout_toEndOf="@+id/card_last_four_digits_label"
+                android:text="1234" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/verify_card_content"
+            android:layout_below="@+id/bin_query_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/verify_card_status_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Verify Card Status:" />
+
+            <TextView
+                android:id="@+id/verify_card_status_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/verify_card_status_label"
+                android:text="1" />
+
+            <TextView
+                android:id="@+id/verify_card_return_code_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_below="@+id/verify_card_status_label"
+                android:text="Verify Card Return Code:" />
+
+            <TextView
+                android:id="@+id/verify_card_return_code_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/verify_card_status_label"
+                android:layout_toEndOf="@+id/verify_card_return_code_label"
+                android:text="00" />
+
+            <TextView
+                android:id="@+id/verify_card_return_message_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_below="@+id/verify_card_return_code_label"
+                android:text="Verify Card Return Message:" />
+
+            <TextView
+                android:id="@+id/verify_card_return_message_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/verify_card_return_code_label"
+                android:layout_toEndOf="@+id/verify_card_return_message_label"
+                android:text="Transação Autorizada" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/validation_content"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ListView
+            android:id="@+id/holder_validation_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <ListView
+            android:id="@+id/card_number_validation_list"
+            android:layout_below="@+id/holder_validation_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <ListView
+            android:id="@+id/expiration_validation_list"
+            android:layout_below="@+id/card_number_validation_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <ListView
+            android:id="@+id/security_code_validation_list"
+            android:layout_below="@+id/expiration_validation_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <ListView
+            android:id="@+id/bin_query_validation_list"
+            android:layout_below="@+id/security_code_validation_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <ListView
+            android:id="@+id/verify_card_validation_list"
+            android:layout_below="@+id/bin_query_validation_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <ListView
+            android:id="@+id/tokenize_validation_list"
+            android:layout_below="@+id/verify_card_validation_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/error_content"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ListView
+            android:id="@+id/error_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
